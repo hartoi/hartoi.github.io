@@ -1,0 +1,61 @@
+1.1 Tässä ohjelmassa tarvitsemme Processingin monimutkaisempia funktioita ja toimintoja, joten määritellään setup ja draw funktiot:
+void setup(){}
+void draw(){}
+1.2  Määrittele nyt pelialueen kooksi 600 x 600 pikseliä. size()-funktion avulla.
+sizen syntaksi on seuraava: size(vaakapikseleiden määrä,pystypikseleiden määrä)
+Tulosta myös näytölle pelilaudan koko println() - funktion avulla. 
+println:n syntaksi on println("Tulostettava merkkijono")
+Sekä size että draw lisätään setup() - funktioon.
+1.3 Vaihda taustan väri draw()-funktiossa background()-funktion avulla.
+Funktion background()-syntaksi on background(R-arvo,G-arvo,B-arvo)
+R,G ja B arvoihin asetetaan kokonaisluvut välillä 0 - 255.
+2.1 Processing pystyy reagoimaan hiiren painamiseen mousePressed()-funktiossa. Lisää funktioiden setup() ja draw() jälkeen mousePressed()-funktio.
+Kopio jompi kumpi aiemmista funktioista ja aseteta sen nimeksi mousePressed(). Lisää sitten funktioon käsky println("Painoit hiirtä"); ja testaa toimiiko tulostuuko teksti näytölle kun painat hiirtä.
+2.2  Lisää nyt mousePressed()-funktioon lisäinformaatioita missä kohtaa hiirtä painettiin. Tulosta println()-funktiossa muuttujat mouseX ja mouseY. Nämä koordinaatit mittaavat hiiren sijainnin vasemmasta ylänurkasta.
+3.1 Luo kokonaislukumuuttujat ympyranX ja ympyranY  Kokonaislukumuuttujan tyyppi on int.
+Muuttuja luodaan syntaksilla muuttujan_tyyppi muuttujan_nimi = muuttujan_arvo
+3.2 Aseta edellisessä tehtävässä luomiesi molempien muuttujien arvoiksi 150. Tee tämä setup()-funktiossa.
+3.3 Lisää vielä kokonaislukumuuttuja HALKAISIJA ja aseta sen arvoksi 50. Piirrä nyt draw()-funktiossa muuttujia ympyranX,ympyranY ja HALKAISIJA avulla ympyrä kohtaan 150 ja 150.
+Ympyra voidaan piirtää ellipse()-funktiolla:
+ellipse(x-koordinaatti, y-koordinaatti, x-suunnan halkaisija, y-suunnan halkaisija).
+4.1 Koita nyt tulostaa näytölle viesti, kun painat ympyrää. Dist()-funktio mittaa kahden pisteen etäisyyttä toisistaan. Dist()-funktion syntaksi on seuraava.
+dist(x1,y1,x2,y2) ja se palauttaa pisteiden välisen etäisyyden.
+Esim
+dist(0,0,10,0) palauttaa arvon 10, koska pisteiden (0,0) ja (10,0) välimatka on 10.
+Kirjoita nyt if()-lause, joka suoritetaan vain, jos etäisyys ympyrän keskipisteestä, eli pisteestä (300,300), on pienempi kuin 25.
+Eli käskyllä dist(hiiren x-koordinaatti, hiiren y-koordinaatti, 300, 300) on pienempi kuin 25.
+if()-lauseen syntaksi on seuraava:
+if( ehto ) {
+//suoritettava koodi
+}
+4.2 Lisää nyt if lauseen perään else-lause, joka suoritetaan, jos hiirtä ei painettu ympyrän alueella. else-lauseen syntaksi on seuraavanlainen
+if( ehto ) {}
+else{
+	// Suoritetaan, jos if-lausetta ei suoriteta
+} 
+4.3 Muuta ympyran paikkaa. Aseta nyt if-lauseessa ympyran x ja y-koordinaateiksi mouseX ja mouseY, siten että ympyra piirretään aina uuteen paikkaan.
+
+Satunnaislukujen käyttö. 
+5.1 Tulosta draw()-funktiossa satunnaislukuja nollasta kuuteensataan konsolissa. Funktion random avulla voit tulostaa satunnaislukuja. Funktio random() ottaa argumentikseen ylärajan johon asti satunnaislukuja arvotaan. Esimerkiksi käsky
+random(10) antaa satunnaisluvun väliltä 0 - 10, poislukien yläarvo 10.
+5.2 Vaihda nyt ympyrä tulostumaan satunnaiseen paikkaan välille 0 - 600, aina sen jälkeen kun sitä on painettu. Huomaa, että tämä tapahtui if-lauseessa.
+5.3 Vaihda nyt tiedoston yläosassa olevat muuttujat ympyranX,ympyranY ja HALKAISIJA tyypistä int tyyppiin float. 
+Paranna random()-funktiolle annettavaa arvoa. Jos arvomme vain luvun 0-600, osa kuvista voivat olla puoliksi piirtoalueen ulkopuolella. Keksitkö miten random()-funktion arvoa pitäisi muuttaa, jos haluaisimme satunnaislukuja väliltä 25 - 575?
+Ohjelman tilan hallinta
+6.1 Alusta nyt uusi muuttuja ja anna sille nimeksi pupuja_jaljella. Jos haluat käyttää jotakin toista pelisymbolia kuin pupua , voit myös vaihtaa muuttujan nimen.
+Aseta muuttujan alku-arvoksi viisi setup()-funktiossa.
+Jos ympyrää painetaan, niin vähennä muutujan arvoa yhdellä. Voit myös tulostaa samalla mikä on muuttujan sen hetkinen arvo.
+6.2 Halutaan, että ohjelma ei enää arvo ympyrän paikkaa uudestaan, jos muuttujan pupuja_jaljella arvo on nolla.
+ Aseta if-lauseeseen toinen ehto: Jotta if-lause suoritettaisiin, niin myös seuraavan ehdon pitää toteutua pupuja_jaljella > 0. 
+Lisää myös if-lauseen perään else-lause, jossa tulostat että pupuja ei ole enää jäljellä.
+Testaa ohjelmaa. Voit myös asettaa pupuja_jaljella alukuarvoksi esim. 3, jotta testaaminen olisi helpompaa. 
+6.3 Lisää nyt draw()-funktioon ehtolause, joka suoritetaan, jos pupujen määrä on tasan nolla. Muuta siinä tapauksessa taustaväri erilaiseksi ja lopeta piirtoalueen päivittäminen noLoop()-käskyllä.
+Informaation tulostaminen
+7.1 Tulosta muuttujan pupuja_jaljella arvo käyttäen text()-funktiota.
+textSize(fontin koko)-funktiolla asetetaan fontin koko. 
+text(näytölle_tulostettava_teksti, x_koordinaatti, y_koordinaatti)
+Tulosta tiedot background käskyn jälkeen, jotta se näkyy kunnolla.
+7.2 Tulosta kuinka kauan aikaa ohjelman aloittamisesta on kulunut, kun ohjelma loppuu. 
+millis()-funktio palauttaa kuinka monta millisekunttia ohjelma on ollut käynnissä.
+
+
