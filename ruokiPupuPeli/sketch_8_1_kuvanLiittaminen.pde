@@ -4,7 +4,7 @@
 float ympyranX,ympyranY;
 float HALKAISIJA;
 int pupuja_jaljella;
-PImage pupu;
+PImage pupu;  // ALUSTETAAN KUVAMUUTTUJA
 
 // setup-funktio suoritetaan kerran ohjelman alkaessa
 void setup(){
@@ -14,8 +14,8 @@ ympyranX = 300;
 ympyranY = 300;
 HALKAISIJA = 50;
 pupuja_jaljella = 3;
-pupu = loadImage("Rabbit.png");
-pupu.resize(50,50);
+pupu = loadImage("Rabbit.png"); // LADATAAN KUVA
+pupu.resize(50,50); // PIENENNETÄÄN KUVAA
 }
 
 
@@ -25,7 +25,7 @@ void draw(){
     textSize(30);
     text("Pupuja jäljellä : "+pupuja_jaljella, 30,30);
     // Tähän tulee pupun tulostava koodi
-    image(pupu,ympyranX,ympyranY); 
+    image(pupu,ympyranX,ympyranY); // TULOSTETAAN KUVA
     ellipse(ympyranX,ympyranY,5,5); // tulostaa pelisymbolin
   if( pupuja_jaljella == 0 ) {
     background(125,255,125);
