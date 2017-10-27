@@ -1,0 +1,34 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Joulu tulee</title>
+	<style>
+	body{
+		background-color: red;
+	}
+	</style>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script>
+	window.onload = function() {
+	$('#kylla_nappi').click( function() {
+		$('#kylla_teksti').show();
+	});
+	$('#ei_nappi').click( function() {
+		$('#ei_teksti').show();
+	});
+
+	$('#kylla_teksti').hide();
+	$('#ei_teksti').hide();
+	
+	}
+	</script>
+</head>
+<body>
+<h1>Kossun Donitsipeli</h1>
+<p>Annatko Kosuselle donitsin?</p>
+<button id="kylla_nappi">Kyllä</button>
+<button id="ei_nappi">Ei</button>
+<p id="kylla_teksti">Voitit pelin!</p>
+<p id="ei_teksti">Hävisit pelin.</p>
+</body>
+</html>
